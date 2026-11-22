@@ -1,0 +1,74 @@
+/* Closet Scout components: pink acts, blue links and selects, yellow fills. Every value comes from tokens.css. */
+.cs-root { font: 15px/23px var(--font-body); color: var(--ink); background: var(--surface); padding: var(--space-4); box-sizing: border-box; }
+.cs-root *, .cs-root *::before, .cs-root *::after { box-sizing: border-box; }
+.cs-row { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.cs-stack { display: grid; gap: var(--space-3); }
+.cs-grid { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.cs-hint { font-size: 13.5px; line-height: 20px; color: var(--ink-muted); margin: 0; }
+.cs-label { font: 500 12px/16px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); }
+
+/* Logo lockup */
+.cs-logo { display: inline-flex; align-items: center; gap: var(--space-2); font: 700 28px/1 var(--font-display); letter-spacing: -.01em; color: var(--ink); }
+.cs-logo img { width: 36px; height: 36px; }
+.cs-logo .cs-on-dark { display: none; }
+[data-theme="dark"] .cs-logo .cs-on-light { display: none; }
+[data-theme="dark"] .cs-logo .cs-on-dark { display: inline; }
+
+/* Button */
+.cs-btn { font: 600 14px/20px var(--font-body); min-height: 44px; padding: 0 var(--space-4); border-radius: var(--radius-control); border: 1px solid var(--line-strong); background: var(--surface-raised); color: var(--ink); cursor: pointer; transition: background-color .15s, border-color .15s; }
+.cs-btn-primary { background: var(--pink); border-color: var(--pink); color: var(--on-pink); }
+.cs-btn-text { border-color: transparent; background: none; color: var(--blue); text-decoration: underline; padding: 0 var(--space-1); }
+.cs-btn:disabled { opacity: .55; cursor: default; }
+.cs-btn:focus-visible, .cs-chip:focus-visible, .cs-field input:focus-visible, .cs-field select:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* Chip */
+.cs-chip { font: 500 13px/18px var(--font-body); min-height: 34px; padding: 0 var(--space-3); border-radius: var(--radius-pill); border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); cursor: pointer; display: inline-flex; align-items: center; gap: var(--space-1); }
+.cs-chip[aria-pressed="true"] { background: var(--pink-soft); border-color: var(--pink); }
+.cs-pill { display: inline-block; font: 500 11.5px/18px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; padding: 1px var(--space-2); border-radius: var(--radius-pill); background: var(--blue-soft); color: var(--ink); }
+.cs-pill-brand { background: var(--pink-soft); }
+.cs-pill-price { background: var(--yellow); color: var(--on-yellow); }
+
+/* Text field */
+.cs-field { display: grid; gap: var(--space-1); font: 600 13px/18px var(--font-body); color: var(--ink-muted); }
+.cs-field input, .cs-field select { font: 400 15px/22px var(--font-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius-control); padding: 10px var(--space-3); min-height: 44px; width: 100%; }
+.cs-field-error input { border-color: var(--bad); }
+.cs-error { font: 500 13px/18px var(--font-body); color: var(--bad); }
+
+/* Size tag: a garment care label */
+.cs-tag { border: 1px dashed var(--line-strong); border-radius: var(--radius-tag); background: var(--yellow-soft); padding: 10px var(--space-3); font-family: var(--font-mono); min-width: 0; }
+.cs-tag small { display: block; font: 500 11px/14px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); }
+.cs-tag b { display: block; font: 500 18px/24px var(--font-mono); margin-top: 2px; overflow-wrap: anywhere; color: var(--ink); }
+
+/* Cards */
+.cs-card { background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius-control); padding: var(--space-4); display: grid; gap: var(--space-2); align-content: start; min-width: 0; }
+.cs-card h3 { margin: 0; font: 700 17px/22px var(--font-display); color: var(--ink); }
+.cs-card p { margin: 0; }
+.cs-query { font: 400 12.5px/18px var(--font-mono); color: var(--ink-muted); overflow-wrap: anywhere; }
+.cs-link { font-weight: 600; color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
+.cs-saved { font: 500 12px/16px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--good); }
+.cs-unsaved { font: 500 12px/16px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); }
+
+/* Verdict */
+.cs-verdict-word { font: 700 26px/30px var(--font-display); }
+.cs-verdict-buy { color: var(--good); }
+.cs-verdict-maybe { color: var(--warn); }
+.cs-verdict-skip { color: var(--bad); }
+.cs-score { font: 500 13px/18px var(--font-mono); color: var(--ink); }
+.cs-note { background: var(--pink-soft); color: var(--ink); border-radius: var(--radius-control); padding: var(--space-2) var(--space-3); font-size: 13.5px; line-height: 20px; }
+.cs-note b { color: var(--pink); }
+
+/* Empty state */
+.cs-empty { border: 1px dashed var(--line-strong); border-radius: var(--radius-control); padding: var(--space-6) var(--space-4); text-align: center; display: grid; gap: var(--space-3); justify-items: center; background: var(--surface-raised); }
+.cs-empty h3 { margin: 0; font: 700 20px/26px var(--font-display); }
+.cs-empty p { margin: 0; max-width: 40ch; color: var(--ink-muted); }
+
+/* Phone frame */
+.cs-phones { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+.cs-phone { width: 280px; border: 8px solid var(--ink); border-radius: 36px; background: var(--surface); overflow: hidden; display: grid; grid-template-rows: auto auto 1fr; height: 560px; }
+.cs-phone-bar { height: 28px; display: flex; justify-content: center; align-items: center; }
+.cs-phone-bar::after { content: ""; width: 84px; height: 20px; border-radius: var(--radius-pill); background: var(--ink); }
+.cs-tabs { display: flex; gap: var(--space-1); border-bottom: 1px solid var(--line); padding: 0 var(--space-3); overflow: hidden; }
+.cs-tabs span { font: 600 12.5px/16px var(--font-body); color: var(--ink-muted); padding: var(--space-2) var(--space-1); white-space: nowrap; }
+.cs-tabs span[aria-current] { color: var(--ink); border-bottom: 3px solid var(--pink); }
+.cs-screen { padding: var(--space-3) var(--space-4); display: grid; gap: var(--space-3); align-content: start; overflow: hidden; }
+.cs-screen h2 { margin: 0; font: 700 22px/26px var(--font-display); }
